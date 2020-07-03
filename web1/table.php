@@ -13,7 +13,7 @@
 <body>
   <div class= "container-fluid">
     <div class="row">
-      <div class= "col-12 text-light"  style="background-color: #33ccff;">
+      <div class= "col-12 bg-primary text-light"  style="background-color: #33ccff;">
         <img src="asset/images/gbr3.jpg" alt="" style="width: 100%; height: 600px">
       </div>
 
@@ -43,7 +43,7 @@
           </form>
         </div>  
       </nav>
-
+      
       <div class="col-12 col-md-8 col-lg-10 container" style="background-color:; width: 100px;">
         <h3 align="center" style="margin-top: 50px;">Data Komentar</h3>         
         <table class="table table-bordered table-hover" style="margin-top: 20px">
@@ -56,19 +56,28 @@
             </tr>
           </thead>
           <tbody>
+            <?php
+            $name1 = 'Adinda';
+            $email1 = 'adinda10@gmail.com';
+            $komen1 = '***** Sangat Baik';
+
+            $name2 = 'Acil';
+            $email2 = 'aciljamur@dalangpelo.com';
+            $komen2 = '*** Sedang';
+            ?>
             <tr>
               <th scope="row">1</th>
-              <td>Adinda</td>
-              <td>adinda10@gmail.com</td>
-              <td>***** Sangat Baik</td>
+              <td><?php echo $name1; ?></td>
+              <td><?php echo $email1; ?></td>
+              <td><?php echo $komen1; ?></td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Acil</td>
-              <td>aciljamur@dalangpelo.com</td>
-              <td>*** Sedang</td>
+              <td><?php echo $name2; ?></td>
+              <td><?php echo $email2; ?></td>
+              <td><?php echo $komen2; ?></td>
             </tr>
-            <tr>
+            <!-- <tr>
               <th scope="row">3</th>
               <td>Leri</td>
               <td>leriler@dalangpelo.com</td>
@@ -85,7 +94,7 @@
               <td>Rara</td>
               <td>raracute@gmail.com</td>
               <td>**** Baik</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
