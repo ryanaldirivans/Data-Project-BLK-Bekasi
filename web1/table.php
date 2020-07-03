@@ -13,7 +13,7 @@
 <body>
   <div class= "container-fluid">
     <div class="row">
-      <div class= "col-12 bg-primary text-light"  style="background-color: #33ccff;">
+      <div class= "col-12 text-light"  style="background-color: #33ccff;">
         <img src="asset/images/gbr3.jpg" alt="" style="width: 100%; height: 600px">
       </div>
 
@@ -44,9 +44,10 @@
         </div>  
       </nav>
       
-      <div class="col-12 col-md-8 col-lg-10 container" style="background-color:; width: 100px;">
-        <h3 align="center" style="margin-top: 50px;">Data Komentar</h3>         
-        <table class="table table-bordered table-hover" style="margin-top: 20px">
+      <div class="col-12 col-md-8 col-lg-8 container" style="background-color:; width: 100px;">
+        <h3 align="center" style="margin-top: 50px;">Data Komentar</h3>
+        <hr>         
+        <table class="table table-bordered table-hover" style="margin-top: 20px;">
           <thead style="background-color: #33ff77;">
             <tr>
               <th scope="col">No</th>
@@ -57,13 +58,13 @@
           </thead>
           <tbody>
             <?php
-            $name1 = 'Adinda';
-            $email1 = 'adinda10@gmail.com';
-            $komen1 = '***** Sangat Baik';
+            $name1 = "Adinda";
+            $email1 = "adinda10@gmail.com";
+            $komen1 = "***** Sangat Baik";
 
-            $name2 = 'Acil';
-            $email2 = 'aciljamur@dalangpelo.com';
-            $komen2 = '*** Sedang';
+            $name2 = "Acil";
+            $email2 = "aciljamur@dalangpelo.com";
+            $komen2 = "*** Sedang";
             ?>
             <tr>
               <th scope="row">1</th>
