@@ -4,7 +4,14 @@ if(isset($_POST['hitung'])){
 	$nama_barang = $_POST['nama_barang'];
 	$harga_barang = $_POST['harga_barang'];
 	$jumlah_barang = $_POST['jumlah_barang'];
+	
 	$total_harga = $harga_barang*$jumlah_barang;
+	if($jumlah_barang>=10){
+		$diskon = 0.05*$total_harga;
+	}else{
+		$diskon =0;
+	}
+	$grand_total = $total_harga - $diskon;
 	
 }else{
 	$nama_barang = "";
@@ -74,15 +81,23 @@ if(isset($_POST['hitung'])){
 					</div>
 					<div class="form-group">
 						<label for="total">Total Harga</label>
-						<input type="number" class="form-control"  name="total_harga" value="<?php echo $total_harga;?>" readonly>
+						<input type="number" class="form-control"  name="total_harga" id="total_harga" value="<?php echo $total_harga;?>" readonly>
+					</div>
+					<div class="form-group">
+						<label for="total">Diskon</label>
+						<input type="number" class="form-control"  name="diskon" id="diskon" value="<?php echo $diskon;?>" readonly>
+					</div>
+					<div class="form-group">
+						<label for="total">Grand Total</label>
+						<input type="number" class="form-control"  name="grand_total" id="grand_total" value="<?php echo $grand_total;?>" readonly>
 					</div>
 					<div class="form-group">
 						<label for="nama">Jumlah Bayar</label>
-						<input type="number" class="form-control"  name="jumlah_bayar" onchange="gekembali()" onkeyup="getkembali()" placeholder="masukan jumlah uang yang akan di bayar" id="jumlah_bayar">
+						<input type="number" class="form-control"  name="jumlah_bayar" onchange="getKembali()" onkeyup="getKembali()" id="jumlah_bayar">
 					</div>
 					<div class="form-group">
 						<label for="nama">Uang Kembali</label>
-						<input type="number" class="form-control"  name="uang_kembali" value="<?php echo $uang_kembali;?>" id="Kembali" readonly>
+						<input type="number" class="form-control"  name="kembali" id="kembali" readonly>
 					</div>
 					<!-- <select class="form-control" name="combo1" id="combo1">
 						<option value="">Harga Barang</option>
@@ -131,9 +146,19 @@ if(isset($_POST['hitung'])){
 	<script src="asset/js/bootstrap.min.js"></script>
 	
 	<script>
-		function getkembali(){
+		function getKembali(){
 			var total_harga = document.getElementById('total_harga').value
 			var jumlah_bayar = document.getElementById('jumlah_bayar').value
+
+			var kembali = jumlah_bayar - total_harga
+			document.getElementById('kembali').value = kembali
+			if(kembali < 0){
+				document.getElementById('tombolbayar').disabled=true;
+			}else{
+				document.getElementById('tombolbayar').disabled=false;
+			}
+			console.log(kembali)
+
 		}
 	</script>
 

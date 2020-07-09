@@ -1,17 +1,17 @@
 <?php 
 
+$jumlah_bayar = $_POST['jumlah_bayar'];
 $total_harga = $_POST['total_harga'];
-$uang_bayar = $_POST['uang_bayar'];
+$kembali = number_format($jumlah_bayar - $total_harga,0,",",".");
 
-if($total_harga>$uang_bayar){
-	echo "<script>alert('maaf uang bayar anda kurang')</script>";
-	echo "script>window.history.back()</script>";
-}elseif ($total_harga<$uang_bayar){
-	$uangkembali = number_format($uang_bayar - $total_harga,0,",",".");
-	echo "<script>alert('terimakasih, uang kembali anda sebesar Rp.$uangkembali');</script>";
+if($total_harga>$jumlah_bayar){
+	echo "<script>alert('terimakasih, uang kembali anda sebesar Rp.$kembali')</script>";
 	echo "<script>window.location.assign('formpenjualanbarang.php')</script>";
+}elseif($total_harga<$jumlah_bayar){
+	echo "<script>alert('maaf uang bayar anda kurang')</script>";
+	echo "<script>window.history.back()<script/>";
 }else{
-	echo "<script>alert('terimakasih');</sript>";
+	echo "<script>alert('terimakasih')</sript>";
 	echo "<script>window.location.assign('formpenjualanbarang.php')</script>";
 }
 // $nama_barang = $_POST['nama_barang'];
